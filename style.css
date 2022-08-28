@@ -1,0 +1,81 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Fira Code", sans-serif;
+    background-color: #282a36;
+    color: #f8f8f2;
+}
+
+#tictactoe {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+#controller {
+    text-align: center;
+    padding: 15px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+}
+
+#restart-button {
+    font: inherit;
+    background-color: rgb(255, 85, 85);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    height: 50px;
+    transition: 1s;
+    color: inherit;
+}
+
+#restart-button:hover {
+    background-color: rgba(255, 85, 85, 0.700);
+}
+
+#board {
+    background-color: rgba(255, 255, 255, 0.459);
+
+    flex: 4;
+
+    display: grid;
+    grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+    gap: 1px;
+}
+
+#board > div {
+    background-color: #fff;
+    color: #44475a;
+    font-size: 5em;
+
+    display: grid;
+    place-items: center;
+
+    cursor: pointer;
+}
+
+#board > .disabled {
+    background-color: #ddd;
+    pointer-events: none;
+}
+
+#board > .highlight {
+    background-color: #6272a4;
+    pointer-events: none;
+    color: #f8f8f2;
+}
+
+@media screen and (min-width: 700px) {
+    #tictactoe {
+        flex-direction: row;
+    }   
+}
